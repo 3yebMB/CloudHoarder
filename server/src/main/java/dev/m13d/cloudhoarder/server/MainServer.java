@@ -5,6 +5,6 @@ import dev.m13d.cloudhoarder.common.Message;
 
 public class MainServer {
     public static void main(String[] args) {
-        Message msg = new Message("CloudHoader");
+        Message msg = new Message("CloudHoarder");
     }
 }
