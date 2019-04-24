@@ -1,6 +1,6 @@
 package dev.m13d.cloudhoarder.common;
 
-import java.io.Serializable;
+//import java.io.Serializable;
 
 public class Message implements Serializable {
     private String text;
