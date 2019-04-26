@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Label?>
+<VBox alignment="center" fx:id="mainVBox" prefHeight="200" prefWidth="400" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.flamexander.javafx.Scene2Controller">
+    <Label text="SCENE 2"/>
+    <!--<Button text="Switch to Scene 1" onAction="#switchSceneTo1"/>-->
+    <Button text="Switch to Scene 1" />
+</VBox>
