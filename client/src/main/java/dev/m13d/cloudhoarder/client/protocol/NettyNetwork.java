@@ -1,4 +1,4 @@
-package com.flamexander.netty.example.client.protocol;
+package dev.m13d.cloudhoarder.client.protocol;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.ByteBuf;

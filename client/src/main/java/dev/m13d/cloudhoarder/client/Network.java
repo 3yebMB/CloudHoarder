@@ -1,6 +1,6 @@
-package com.flamexander.netty.example.client;
+package dev.m13d.cloudhoarder.client;
 
-import com.flamexander.netty.example.common.AbstractMessage;
+import dev.m13d.cloudhoarder.common.AbstractMessage;
 import io.netty.handler.codec.serialization.ObjectDecoderInputStream;
 import io.netty.handler.codec.serialization.ObjectEncoderOutputStream;
 

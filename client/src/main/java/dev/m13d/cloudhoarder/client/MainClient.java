@@ -1,4 +1,4 @@
-package com.flamexander.netty.example.client;
+package dev.m13d.cloudhoarder.client;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

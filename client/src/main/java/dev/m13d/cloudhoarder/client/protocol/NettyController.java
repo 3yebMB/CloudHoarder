@@ -1,9 +1,5 @@
-package com.flamexander.netty.example.client.protocol;
+package dev.m13d.cloudhoarder.client.protocol;
 
-import com.flamexander.netty.example.client.Network;
-import com.flamexander.netty.example.common.AbstractMessage;
-import com.flamexander.netty.example.common.FileMessage;
-import com.flamexander.netty.example.common.FileRequest;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,7 +11,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.util.ResourceBundle;
 
 public class NettyController implements Initializable {

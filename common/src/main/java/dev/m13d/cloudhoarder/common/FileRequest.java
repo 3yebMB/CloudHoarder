@@ -1,4 +1,4 @@
-package com.flamexander.netty.example.common;
+package dev.m13d.cloudhoarder.common;
 
 public class FileRequest extends AbstractMessage {
     private String filename;

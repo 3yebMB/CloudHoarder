@@ -1,4 +1,4 @@
-package com.flamexander.netty.example.server;
+package dev.m13d.cloudhoarder.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;

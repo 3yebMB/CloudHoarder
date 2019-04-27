@@ -1,4 +1,4 @@
-package com.flamexander.netty.example.common;
+package dev.m13d.cloudhoarder.common;
 
 import java.io.Serializable;
 

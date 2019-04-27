@@ -1,8 +1,7 @@
-package com.flamexander.netty.example.server;
+package dev.m13d.cloudhoarder.server;
 
-import com.flamexander.netty.example.common.AbstractMessage;
-import com.flamexander.netty.example.common.FileMessage;
-import com.flamexander.netty.example.common.FileRequest;
+import dev.m13d.cloudhoarder.common.FileMessage;
+import dev.m13d.cloudhoarder.common.FileRequest;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.ReferenceCountUtil;

@@ -1,11 +1,9 @@
-package com.flamexander.netty.example.client;
+package dev.m13d.cloudhoarder.client;
 
-import com.flamexander.netty.example.client.protocol.NettyNetwork;
-import com.flamexander.netty.example.common.AbstractMessage;
-import com.flamexander.netty.example.common.FileMessage;
-import com.flamexander.netty.example.common.FileRequest;
+import dev.m13d.cloudhoarder.common.AbstractMessage;
+import dev.m13d.cloudhoarder.common.FileMessage;
+import dev.m13d.cloudhoarder.common.FileRequest;
 import javafx.application.Platform;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
