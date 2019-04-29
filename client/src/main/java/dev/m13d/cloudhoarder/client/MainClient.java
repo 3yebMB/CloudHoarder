@@ -1,23 +1,23 @@
 package dev.m13d.cloudhoarder.client;
 
-import dev.m13d.cloudhoarder.common.Message;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+public class MainClient extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/main.fxml"));
-        primaryStage.setTitle("Cloud Hoarder");
-        primaryStage.setScene(new Scene(root, 400, 400));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/main.fxml"));
+        Parent root = fxmlLoader.load();
+        primaryStage.setTitle("Box Client");
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
         primaryStage.show();
     }
 
     public static void main(String[] args) {
         launch(args);
-        Message msg = new Message("CloudHoarder");
     }
 }
