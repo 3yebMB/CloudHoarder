@@ -84,4 +84,8 @@ public class MainController implements Initializable {
             });
         }
     }
+
+    public void btnExit(ActionEvent actionEvent) {
+        System.exit(0);
+    }
 }
