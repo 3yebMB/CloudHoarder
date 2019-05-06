@@ -8,6 +8,7 @@ import io.netty.util.ReferenceCountUtil;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 
 public class MainHandler extends ChannelInboundHandlerAdapter {
     @Override
@@ -22,6 +23,11 @@ public class MainHandler extends ChannelInboundHandlerAdapter {
                     FileMessage fm = new FileMessage(Paths.get("server_storage/" + fr.getFilename()));
                     ctx.writeAndFlush(fm);
                 }
+            }
+            if (msg instanceof FileMessage) {
+                Files.write(Paths.get("server_storage/" + ((FileMessage) msg).getFilename()), ((FileMessage) msg).getData(), StandardOpenOption.CREATE);
+//                Files.
+                System.out.println("File has been received");
             }
         } finally {
             ReferenceCountUtil.release(msg);
