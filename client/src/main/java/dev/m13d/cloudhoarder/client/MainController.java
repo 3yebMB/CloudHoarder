@@ -22,7 +22,10 @@ public class MainController implements Initializable {
     TextField tfFileName;
 
     @FXML
-    ListView<String> filesList;
+    ListView<String> filesLList;
+
+    @FXML
+    ListView<String> filesRList;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -55,23 +58,34 @@ public class MainController implements Initializable {
         }
     }
 
+    public void pressOnSendData(ActionEvent actionEvent) throws IOException {
+        if (filesLList.getSelectionModel().getSelectedItem() != null && Files.exists(Paths.get("client_storage/" + filesLList.getSelectionModel().getSelectedItem()))) {
+            System.out.println("File is exist");
+            Network.sendMsg(new FileMessage(Paths.get("client_storage/" + filesLList.getSelectionModel().getSelectedItem())));
+        }
+    }
+
     public void refreshLocalFilesList() {
         if (Platform.isFxApplicationThread()) {
             try {
-                filesList.getItems().clear();
-                Files.list(Paths.get("client_storage")).map(p -> p.getFileName().toString()).forEach(o -> filesList.getItems().add(o));
+                filesLList.getItems().clear();
+                Files.list(Paths.get("client_storage/")).map(p -> p.getFileName().toString()).forEach(o -> filesLList.getItems().add(o));
             } catch (IOException e) {
                 e.printStackTrace();
             }
         } else {
             Platform.runLater(() -> {
                 try {
-                    filesList.getItems().clear();
-                    Files.list(Paths.get("client_storage")).map(p -> p.getFileName().toString()).forEach(o -> filesList.getItems().add(o));
+                    filesLList.getItems().clear();
+                    Files.list(Paths.get("client_storage/")).map(p -> p.getFileName().toString()).forEach(o -> filesLList.getItems().add(o));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             });
         }
+    }
+
+    public void btnExit(ActionEvent actionEvent) {
+        System.exit(0);
     }
 }
