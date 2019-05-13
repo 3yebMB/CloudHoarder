@@ -7,8 +7,10 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.util.Callback;
 
 import java.io.IOException;
 import java.net.URL;
@@ -22,6 +24,9 @@ public class MainController implements Initializable {
     TextField tfFileName;
 
     @FXML
+    ListView<Person> customCellListView;
+
+    @FXML
     ListView<String> filesLList;
 
     @FXML
@@ -30,6 +35,7 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Network.start();
+        initializePersonListView();
         Thread t = new Thread(() -> {
             try {
                 while (true) {
@@ -51,10 +57,30 @@ public class MainController implements Initializable {
         refreshLocalFilesList();
     }
 
+    public void initializePersonListView() {
+        customCellListView.getItems().addAll(new Person("User", "user_mail.@somemail.com"));
+        customCellListView.setCellFactory(new Callback<ListView<Person>, ListCell<Person>>() {
+            @Override
+            public ListCell<Person> call(ListView<Person> studentListView) {
+                return new PersonListCell();
+            }
+        });
+    }
+
+/*
     public void pressOnDownloadBtn(ActionEvent actionEvent) {
         if (tfFileName.getLength() > 0) {
             Network.sendMsg(new FileRequest(tfFileName.getText()));
             tfFileName.clear();
+        }
+    }
+*/
+
+    public void pressOnDownloadBtn(ActionEvent actionEvent) {
+        if (filesRList.getSelectionModel().getSelectedItem() != null) {
+            Network.sendMsg(new FileRequest(filesRList.getSelectionModel().getSelectedItem()));
+        } else {
+
         }
     }
 
