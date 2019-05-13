@@ -23,8 +23,8 @@
       </children>
    </HBox>
    <ListView fx:id="customCellListView" prefHeight="180.0" prefWidth="640.0" />
-    <HBox>
-        <TextField fx:id="tfFileName" disable="true" focusTraversable="false" promptText="Укажите имя файла на сервере, который хотите скачать" visible="false" HBox.hgrow="ALWAYS" />
+    <HBox disable="true" fillHeight="false" prefHeight="0.0" prefWidth="640.0" visible="false">
+        <TextField fx:id="tfFileName" disable="true" focusTraversable="false" prefHeight="1.0" prefWidth="640.0" visible="false" HBox.hgrow="ALWAYS" />
     </HBox>
    <HBox prefHeight="430.0" prefWidth="640.0">
       <children>
@@ -36,6 +36,9 @@
          <children>
           <Button onAction="#pressOnSendData" text="Загрузить" />
            <Button onAction="#pressOnDownloadBtn" text="Скачать" />
+            <Button text="Обновить" />
+            <Button text="Удалить" />
+            <Button text="Информация" />
          </children>
       </HBox>
 </VBox>
