@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="rootNode" prefHeight="480" prefWidth="640" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.m13d.cloudhoarder.client.MainController">
+<StackPane fx:id="rootNode" prefHeight="480" prefWidth="640" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.m13d.cloudhoarder.client.MainController">
 <!--<VBox fx:id="rootNode" alignment="CENTER" prefHeight="480.0" prefWidth="640.0" style="-fx-background-color: linear-gradient(#fff 0%, #eee 10%, #ddd 90%, #bbb 100%);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.m13d.cloudhoarder.client.MainController">-->
 <VBox fx:id="mainVBox" style="-fx-background-color: linear-gradient(#fff 0%, #eee 10%, #ddd 90%, #bbb 100%);">
    <HBox>
@@ -34,11 +34,12 @@
    </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
-          <Button onAction="#pressOnSendData" text="Загрузить" />
-           <Button onAction="#pressOnDownloadBtn" text="Скачать" />
-            <Button text="Обновить" />
-            <Button text="Удалить" />
-            <Button text="Информация" />
+          <Button onAction="#pressOnSendBtn" text="Загрузить" />
+           <Button onAction="#pressOnDownloadBtn" text="Выгрузить" />
+            <Button fx:id="refreshBtn" onAction="pressOnRefreshBtn" text="Обновить" />
+            <Button fx:id="deleteBtn" onAction="pressOnDeleteBtn" text="Удалить" />
+            <Button fx:id="renameBtn" onAction="pressOnRenameBtn" text="Переименовать" />
+            <Button fx:id="infoBtn" text="Информация" />
          </children>
       </HBox>
 </VBox>
