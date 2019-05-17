@@ -5,10 +5,13 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="rootNode" alignment="CENTER" prefHeight="480.0" prefWidth="640.0" style="-fx-background-color: linear-gradient(#fff 0%, #eee 10%, #ddd 90%, #bbb 100%);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.m13d.cloudhoarder.client.MainController">
+<StackPane fx:id="rootNode" prefHeight="480" prefWidth="640" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.m13d.cloudhoarder.client.MainController">
+<!--<VBox fx:id="rootNode" alignment="CENTER" prefHeight="480.0" prefWidth="640.0" style="-fx-background-color: linear-gradient(#fff 0%, #eee 10%, #ddd 90%, #bbb 100%);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.m13d.cloudhoarder.client.MainController">-->
+<VBox fx:id="mainVBox" style="-fx-background-color: linear-gradient(#fff 0%, #eee 10%, #ddd 90%, #bbb 100%);">
    <HBox>
       <children>
          <Label fx:id="labelDragWindow" alignment="CENTER" maxWidth="Infinity" minHeight="36" prefHeight="36" style="-fx-background-color: linear-gradient(#1aa111 0, #2bb22666 38%, #c0ffee 60%, #3cc1a3 86%, #4dd13a 100%); -fx-border-radius: 20 0 0 0; -fx-background-radius: 20 0 0 0; -fx-text-fill: #000000;" text="Cloud Hoarder" HBox.hgrow="ALWAYS">
@@ -19,9 +22,9 @@
          <Button maxHeight="Infinity" onAction="#btnExit" style="-fx-background-color: linear-gradient(#0ff111 0, #8ee22666 38%, #eeaa6c 60%, #7dd1a3 86%, #6cc13a 100%); -fx-border-radius: 0 20 0 0; -fx-background-radius: 0 20 0 0; -fx-text-fill: #000000;" text="[X]" />
       </children>
    </HBox>
-    <HBox>
-        <TextField fx:id="tfFileName" focusTraversable="false" promptText="Укажите имя файла на сервере, который хотите скачать" HBox.hgrow="ALWAYS" />
-        <Button onAction="#pressOnDownloadBtn" text="Скачать" />
+   <ListView fx:id="customCellListView" prefHeight="180.0" prefWidth="640.0" />
+    <HBox disable="true" fillHeight="false" prefHeight="0.0" prefWidth="640.0" visible="false">
+        <TextField fx:id="tfFileName" disable="true" focusTraversable="false" prefHeight="1.0" prefWidth="640.0" visible="false" HBox.hgrow="ALWAYS" />
     </HBox>
    <HBox prefHeight="430.0" prefWidth="640.0">
       <children>
@@ -29,5 +32,15 @@
          <ListView fx:id="filesRList" prefWidth="320.0" />
       </children>
    </HBox>
-    <Button onAction="#pressOnSendData" text="Загрузить" />
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+          <Button onAction="#pressOnSendBtn" text="Загрузить" />
+           <Button onAction="#pressOnDownloadBtn" text="Выгрузить" />
+            <Button fx:id="refreshBtn" onAction="pressOnRefreshBtn" text="Обновить" />
+            <Button fx:id="deleteBtn" onAction="pressOnDeleteBtn" text="Удалить" />
+            <Button fx:id="renameBtn" onAction="pressOnRenameBtn" text="Переименовать" />
+            <Button fx:id="infoBtn" text="Информация" />
+         </children>
+      </HBox>
 </VBox>
+</StackPane>

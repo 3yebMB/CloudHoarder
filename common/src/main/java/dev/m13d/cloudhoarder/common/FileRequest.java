@@ -1,13 +1,13 @@
 package dev.m13d.cloudhoarder.common;
 
 public class FileRequest extends AbstractMessage {
-    private String filename;
+    private String fileName;
 
-    public String getFilename() {
-        return filename;
+    public String getFileName() {
+        return fileName;
     }
 
-    public FileRequest(String filename) {
-        this.filename = filename;
+    public FileRequest(String fileName) {
+        this.fileName = fileName;
     }
 }
